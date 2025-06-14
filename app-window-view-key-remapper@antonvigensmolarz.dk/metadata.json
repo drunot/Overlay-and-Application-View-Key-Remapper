@@ -1,0 +1,10 @@
+{
+  "name": "Application and Window View Key Remapper",
+  "description": "Changes the Keyboard shortcuts for the application view and the window view",
+  "uuid": "app-window-view-key-remapper@antonvigensmolarz.dk",
+  "shell-version": [
+    "48"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.app-window-view-key-remapper"
+
+}
