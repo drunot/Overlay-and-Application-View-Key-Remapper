@@ -1,5 +1,7 @@
 # Overlay and Application View Keyboard Shortcut Remapper for Gnome 40+:
-When activating overview (Super button), the application view is shown instead of the view with the windows. This is a updated version of the extension Start Overlay in Application View created by tmk (https://extensions.gnome.org/accounts/profile/tmk), also i'd like to thanks user JustPerfection (https://extensions.gnome.org/accounts/profile/JustPerfection) for helping me on this extension. Tested on Gnome 42, didn't had time to test on 40 and 41 versions but it should work (let me know if it don't please).
+When activating overview (Super button), the application view is shown instead of the view with the windows. This is a fork of an updated version of the extension Start Overlay in Application View created by tmk (https://extensions.gnome.org/accounts/profile/tmk), also i'd like to thanks user JustPerfection (https://extensions.gnome.org/accounts/profile/JustPerfection) for helping me on this extension. Tested on Gnome 42, didn't had time to test on 40 and 41 versions but it should work (let me know if it don't please).
+
+The original version can be found [here](https://github.com/Hexcz/Start-Overlay-in-Application-View-for-Gnome-40-).
 
 ## Expected behavior:
 After hitting `Super key`, instead of display overview:\
