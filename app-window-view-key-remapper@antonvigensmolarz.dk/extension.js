@@ -75,10 +75,10 @@ export default class StartOverlayInAppViewExtension extends Extension {
   disable() {
     Overview.Overview.prototype.toggle = this.originalToggle;
     this._settings.disconnect(this._settingsChangedId);
-    this._settings = null;
-    this._settingsChangedId = null;
     if (this._settings.get_boolean("remapper-toggle-overview-key-enabled")) {
       this._disableKeybinding();
     }
+    this._settings = null;
+    this._settingsChangedId = null;
   }
 }
