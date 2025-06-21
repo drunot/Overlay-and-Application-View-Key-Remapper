@@ -13,4 +13,7 @@ Applications view is displayed in it's place:\
 When hitting `Super key + D` the display overview is still accessible.
 
 ## Manual instalation:
-For manual installation, just paste the folder containing the `extension.js`, `metadata.js`, and `schemas` entires at `.local/share/gnome-shell/extensions` folder, then restart your gnome-shell (on X11 press alt+f2, type r in the command box) or simply log in and out of your account. After that the extension should appear on extensions manager. Do *not* rename the folder.
+For manual installation, just run the following command:
+```bash
+$ make install
+```

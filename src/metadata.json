@@ -5,6 +5,6 @@
   "shell-version": [
     "48"
   ],
-  "settings-schema": "org.gnome.shell.extensions.app-window-view-key-remapper"
-
+  "settings-schema": "org.gnome.shell.extensions.app-window-view-key-remapper",
+  "url": "https://github.com/drunot/Overlay-and-Application-View-Key-Remapper"
 }

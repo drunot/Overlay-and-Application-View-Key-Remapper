@@ -67,7 +67,7 @@ const isValidBinding$1 = (mask, keycode, keyval) => {
   );
 };
 
-export default class ExamplePreferences extends ExtensionPreferences {
+export default class StartOverlayInAppViewPreferences extends ExtensionPreferences {
   fillPreferencesWindow(window) {
     // Create a preferences page, with a single group
     const page = new Adw.PreferencesPage({
