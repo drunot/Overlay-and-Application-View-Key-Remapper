@@ -50,6 +50,12 @@ export default class StartOverlayInAppViewExtension extends Extension {
           this._disableKeybinding();
         }
         break;
+      case "remapper-toggle-overview-key":
+        if (settings.get_boolean("remapper-toggle-overview-key-enabled")) {
+          this._disableKeybinding();
+          this._enableKeybinding();
+        }
+        break;
     }
   }
 
