@@ -23,6 +23,7 @@ move: clean
 zip: build
 	cd $(BUILDDIR)/$(UUID) && zip -r $(UUID).zip * && mv $(UUID).zip ../
 
+
 install: uninstall build
 	mkdir -p $(EXTENSIONDIR)/$(UUID)
 	cp -r $(BUILDDIR)/$(UUID) $(EXTENSIONDIR)/
@@ -30,6 +31,6 @@ install: uninstall build
 uninstall:
 	rm -rf $(EXTENSIONDIR)/$(UUID)
 
-debug_install: uninstall
-	ln -s "$(realpath ./)/$(SRCDIR)" $(UUID)
+debug_install: uninstall build
+	ln -s "$(realpath ./)/$(BUILDDIR)/$(UUID)" $(UUID)
 	mv $(UUID) $(EXTENSIONDIR)
