@@ -76,11 +76,11 @@ export default class StartOverlayInAppViewPreferences extends ExtensionPreferenc
     });
     window.add(page);
 
-    const group = new Adw.PreferencesGroup({
+    const group1 = new Adw.PreferencesGroup({
       title: _("New Overview Keybinding"),
       description: _("Configure the overview keybinding of the extension"),
     });
-    page.add(group);
+    page.add(group1);
 
     // Create a new preferences row
     const row = new Adw.SwitchRow({
@@ -89,7 +89,7 @@ export default class StartOverlayInAppViewPreferences extends ExtensionPreferenc
         "Enable or disable the keyboard shortcut to hide/view the GNOME window overview."
       ),
     });
-    group.add(row);
+    group1.add(row);
 
     // Create a settings object and bind the row to the `show-indicator` key
     window._settings = this.getSettings();
@@ -110,7 +110,41 @@ export default class StartOverlayInAppViewPreferences extends ExtensionPreferenc
       "This keybinding will be used to show or hide the GNOME overview when the extension is active.",
       "Press a key combination to set the toggle overview keybinding."
     );
-    group.add(keybindingRow);
+    group1.add(keybindingRow);
+
+    const group2 = new Adw.PreferencesGroup({
+      title: _("Hot Corner and Activity Button Behavior"),
+      description: _("Configure the hot corner and activity button behaviors."),
+    });
+
+    page.add(group2);
+
+    const hotCornerRow = new Adw.SwitchRow({
+      title: _("Override Hot Corner Functionality"),
+      subtitle: _(
+        "Show app view instead of overview when interacting with hot corner."
+      ),
+    });
+    window._settings.bind(
+      "remapper-override-hot-corner-enabled",
+      hotCornerRow,
+      "active",
+      Gio.SettingsBindFlags.DEFAULT
+    );
+    group2.add(hotCornerRow);
+    const activityButtonRow = new Adw.SwitchRow({
+      title: _("Override Activity Button Functionality"),
+      subtitle: _(
+        "Show app view instead of overview when clicking the activity button."
+      ),
+    });
+    window._settings.bind(
+      "remapper-override-activity-button-enabled",
+      activityButtonRow,
+      "active",
+      Gio.SettingsBindFlags.DEFAULT
+    );
+    group2.add(activityButtonRow);
   }
 }
 

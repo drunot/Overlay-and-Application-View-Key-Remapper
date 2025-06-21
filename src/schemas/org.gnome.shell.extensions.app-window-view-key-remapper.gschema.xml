@@ -9,5 +9,13 @@
             <default><![CDATA[['<Super>d']]]></default>
             <summary>Keyboard shortcut to view/hide the window overview.</summary>
         </key>
+        <key type="b" name="remapper-override-hot-corner-enabled">
+            <default>false</default>
+            <summary>Show app view instead of overview when interacting with hot corner.</summary>
+        </key>
+        <key type="b" name="remapper-override-activity-button-enabled">
+            <default>false</default>
+            <summary>Show app view instead of overview when using activity button.</summary>
+        </key>
     </schema>
 </schemalist>
