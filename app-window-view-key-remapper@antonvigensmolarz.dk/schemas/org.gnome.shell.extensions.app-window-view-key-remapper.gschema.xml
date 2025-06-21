@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
     <schema id="org.gnome.shell.extensions.app-window-view-key-remapper" path="/org/gnome/shell/extensions/app-window-view-key-remapper/">
+        <key type="b" name="remapper-toggle-overview-key-enabled">
+            <default>true</default>
+            <summary>Use keyboard shortcut to view/hide the window overview.</summary>
+        </key>
         <key type="as" name="remapper-toggle-overview-key">
             <default><![CDATA[['<Super>d']]]></default>
-            <summary>Switch to the next window on the current workspace</summary>
+            <summary>Keyboard shortcut to view/hide the window overview.</summary>
         </key>
     </schema>
 </schemalist>

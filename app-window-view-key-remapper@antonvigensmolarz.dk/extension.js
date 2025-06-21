@@ -25,16 +25,7 @@ export default class StartOverlayInAppViewExtension extends Extension {
     }
   }
 
-  enable() {
-    this._settings = this.getSettings();
-
-    Overview.Overview.prototype.toggle = function () {
-      if (this.isDummy) return;
-
-      if (this._visible) this.hide();
-      else this.showApps();
-    };
-
+  _enableKeybinding() {
     Main.wm.addKeybinding(
       "remapper-toggle-overview-key",
       this._settings,
@@ -46,8 +37,48 @@ export default class StartOverlayInAppViewExtension extends Extension {
     );
   }
 
+  _disableKeybinding() {
+    Main.wm.removeKeybinding("remapper-toggle-overview-key");
+  }
+
+  _onSettingsChanged(settings, key) {
+    switch (key) {
+      case "remapper-toggle-overview-key-enabled":
+        if (settings.get_boolean(key)) {
+          this._enableKeybinding();
+        } else {
+          this._disableKeybinding();
+        }
+        break;
+    }
+  }
+
+  enable() {
+    this._settings = this.getSettings();
+    this._settingsChangedId = this._settings.connect(
+      "changed",
+      this._onSettingsChanged.bind(this)
+    );
+
+    Overview.Overview.prototype.toggle = function () {
+      if (this.isDummy) return;
+
+      if (this._visible) this.hide();
+      else this.showApps();
+    };
+
+    if (this._settings.get_boolean("remapper-toggle-overview-key-enabled")) {
+      this._enableKeybinding();
+    }
+  }
+
   disable() {
     Overview.Overview.prototype.toggle = this.originalToggle;
-    Main.wm.removeKeybinding("remapper-toggle-overview-key");
+    this._settings.disconnect(this._settingsChangedId);
+    this._settings = null;
+    this._settingsChangedId = null;
+    if (this._settings.get_boolean("remapper-toggle-overview-key-enabled")) {
+      this._disableKeybinding();
+    }
   }
 }
