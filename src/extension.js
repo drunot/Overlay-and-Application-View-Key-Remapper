@@ -197,6 +197,9 @@ export default class StartOverlayInAppViewExtension extends Extension {
 
     // Override the toggle function in Overview.Overview
     Overview.Overview.prototype.toggle = function () {
+      // If toggled is true, it means that the toggle function
+      // was called by the hot corner or activities button, so we
+      // do not want to call it again.
       if (this.toggled || false) {
         this.toggled = false;
         return;
