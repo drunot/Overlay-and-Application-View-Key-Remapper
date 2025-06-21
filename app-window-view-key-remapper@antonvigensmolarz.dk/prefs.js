@@ -1,3 +1,12 @@
+/**
+ * @file prefs.js
+ * 
+ * Preferences for the GNOME Shell extension that remaps the overview key.
+ * 
+ * Copyright (C) 2025 Anton Vigen Smolarz
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 import Gdk from "gi://Gdk";
 import Gtk from "gi://Gtk";
 import Gio from "gi://Gio";
@@ -105,6 +114,9 @@ export default class ExamplePreferences extends ExtensionPreferences {
   }
 }
 
+// This code is adapted from https://gitlab.com/paddatrapper/shortcuts-gnome-extension/
+// Copyright (C) 2016-2018 Kyle Robbertze
+// SPDX-License-Identifier: GPL-3.0-or-later
 function createKeybindingRow(
   page,
   settings,

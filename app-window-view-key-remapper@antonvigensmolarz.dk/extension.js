@@ -1,3 +1,12 @@
+/**
+ * @file extension.js
+ * 
+ * GNOME Shell extension that remaps the overview key.
+ * 
+ * Copyright (C) 2025 Anton Vigen Smolarz
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 import {
   Extension,
   gettext as _,
