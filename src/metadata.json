@@ -3,7 +3,8 @@
   "description": "Changes the Keyboard shortcuts for the application view and the window view",
   "uuid": "app-window-view-key-remapper@antonvigensmolarz.dk",
   "shell-version": [
-    "48"
+    "48",
+    "49"
   ],
   "settings-schema": "org.gnome.shell.extensions.app-window-view-key-remapper",
   "url": "https://github.com/drunot/Overlay-and-Application-View-Key-Remapper"
